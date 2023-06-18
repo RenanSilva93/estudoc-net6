@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ne/zK77mvPCPMe9rP15zXkPLrRfpg5O9UQni39iEimnQ7rtbDbc+qT3pAUReKA56znvXyTPIVlhBa7xYj+/rIg==",
+  "dgSpecHash": "P9hz4TxltKnyf1z4NAamyFyQa8cNW+SMx9taGSYz1cS2d6dn9g7P+Xu1/Dg1NiFS1FoWqPy4ZdNrpXVpvKQqOw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\renan\\OneDrive\\Documentos\\FilmesApi\\FilmesApi\\FilmesApi.csproj",
+  "projectFilePath": "C:\\Users\\renan\\OneDrive\\Documentos\\estudoc-net6\\FilmesApi\\FilmesApi\\FilmesApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\renan\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\renan\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",

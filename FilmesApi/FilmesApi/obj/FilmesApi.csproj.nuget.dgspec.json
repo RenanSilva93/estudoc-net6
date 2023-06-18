@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\renan\\OneDrive\\Documentos\\FilmesApi\\FilmesApi\\FilmesApi.csproj": {}
+    "C:\\Users\\renan\\OneDrive\\Documentos\\estudoc-net6\\FilmesApi\\FilmesApi\\FilmesApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\renan\\OneDrive\\Documentos\\FilmesApi\\FilmesApi\\FilmesApi.csproj": {
+    "C:\\Users\\renan\\OneDrive\\Documentos\\estudoc-net6\\FilmesApi\\FilmesApi\\FilmesApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\renan\\OneDrive\\Documentos\\FilmesApi\\FilmesApi\\FilmesApi.csproj",
+        "projectUniqueName": "C:\\Users\\renan\\OneDrive\\Documentos\\estudoc-net6\\FilmesApi\\FilmesApi\\FilmesApi.csproj",
         "projectName": "FilmesApi",
-        "projectPath": "C:\\Users\\renan\\OneDrive\\Documentos\\FilmesApi\\FilmesApi\\FilmesApi.csproj",
+        "projectPath": "C:\\Users\\renan\\OneDrive\\Documentos\\estudoc-net6\\FilmesApi\\FilmesApi\\FilmesApi.csproj",
         "packagesPath": "C:\\Users\\renan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\renan\\OneDrive\\Documentos\\FilmesApi\\FilmesApi\\obj\\",
+        "outputPath": "C:\\Users\\renan\\OneDrive\\Documentos\\estudoc-net6\\FilmesApi\\FilmesApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\renan\\AppData\\Roaming\\NuGet\\NuGet.Config",
