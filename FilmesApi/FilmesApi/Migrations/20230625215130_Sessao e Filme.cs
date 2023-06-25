@@ -5,11 +5,13 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace FilmesApi.Migrations
 {
-    public partial class CinemaeEndereco : Migration
+    /// <inheritdoc />
+    public partial class SessaoeFilme : Migration
     {
+        /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.CreateTable(
+            /*migrationBuilder.CreateTable(
                 name: "Enderecos",
                 columns: table => new
                 {
@@ -23,9 +25,29 @@ namespace FilmesApi.Migrations
                 {
                     table.PrimaryKey("PK_Enderecos", x => x.Id);
                 })
-                .Annotation("MySql:CharSet", "utf8mb4");
+                .Annotation("MySql:CharSet", "utf8mb4");*/
 
-            migrationBuilder.CreateTable(
+            /*migrationBuilder.CreateTable(
+                name: "Sessoes",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    FilmeId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Sessoes", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Sessoes_Filmes_FilmeId",
+                        column: x => x.FilmeId,
+                        principalTable: "Filmes",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");*/
+
+            /*migrationBuilder.CreateTable(
                 name: "Cinemas",
                 columns: table => new
                 {
@@ -45,19 +67,28 @@ namespace FilmesApi.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 })
-                .Annotation("MySql:CharSet", "utf8mb4");
+                .Annotation("MySql:CharSet", "utf8mb4");*/
 
-            migrationBuilder.CreateIndex(
+            /*migrationBuilder.CreateIndex(
                 name: "IX_Cinemas_EnderecoId",
                 table: "Cinemas",
                 column: "EnderecoId",
-                unique: true);
+                unique: true);*/
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Sessoes_FilmeId",
+                table: "Sessoes",
+                column: "FilmeId");
         }
 
+        /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
                 name: "Cinemas");
+
+            migrationBuilder.DropTable(
+                name: "Sessoes");
 
             migrationBuilder.DropTable(
                 name: "Enderecos");
