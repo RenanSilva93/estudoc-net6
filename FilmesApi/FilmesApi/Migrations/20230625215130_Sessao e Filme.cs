@@ -27,7 +27,7 @@ namespace FilmesApi.Migrations
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");*/
 
-            /*migrationBuilder.CreateTable(
+            migrationBuilder.CreateTable(
                 name: "Sessoes",
                 columns: table => new
                 {
@@ -45,9 +45,9 @@ namespace FilmesApi.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 })
-                .Annotation("MySql:CharSet", "utf8mb4");*/
+                .Annotation("MySql:CharSet", "utf8mb4");
 
-            /*migrationBuilder.CreateTable(
+            migrationBuilder.CreateTable(
                 name: "Cinemas",
                 columns: table => new
                 {
@@ -67,7 +67,7 @@ namespace FilmesApi.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 })
-                .Annotation("MySql:CharSet", "utf8mb4");*/
+                .Annotation("MySql:CharSet", "utf8mb4");
 
             /*migrationBuilder.CreateIndex(
                 name: "IX_Cinemas_EnderecoId",
