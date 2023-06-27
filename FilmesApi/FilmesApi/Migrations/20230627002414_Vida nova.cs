@@ -6,12 +6,15 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace FilmesApi.Migrations
 {
     /// <inheritdoc />
-    public partial class SessaoeFilme : Migration
+    public partial class Vidanova : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            /*migrationBuilder.CreateTable(
+            migrationBuilder.AlterDatabase()
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
                 name: "Enderecos",
                 columns: table => new
                 {
@@ -25,25 +28,23 @@ namespace FilmesApi.Migrations
                 {
                     table.PrimaryKey("PK_Enderecos", x => x.Id);
                 })
-                .Annotation("MySql:CharSet", "utf8mb4");*/
+                .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Sessoes",
+                name: "Filmes",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    FilmeId = table.Column<int>(type: "int", nullable: false)
+                    Titulo = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Genero = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Duracao = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Sessoes", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Sessoes_Filmes_FilmeId",
-                        column: x => x.FilmeId,
-                        principalTable: "Filmes",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                    table.PrimaryKey("PK_Filmes", x => x.Id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -65,30 +66,58 @@ namespace FilmesApi.Migrations
                         column: x => x.EnderecoId,
                         principalTable: "Enderecos",
                         principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "Sessoes",
+                columns: table => new
+                {
+                    FilmeId = table.Column<int>(type: "int", nullable: false),
+                    CinemaId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Sessoes", x => new { x.FilmeId, x.CinemaId });
+                    table.ForeignKey(
+                        name: "FK_Sessoes_Cinemas_CinemaId",
+                        column: x => x.CinemaId,
+                        principalTable: "Cinemas",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Sessoes_Filmes_FilmeId",
+                        column: x => x.FilmeId,
+                        principalTable: "Filmes",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
-            /*migrationBuilder.CreateIndex(
+            migrationBuilder.CreateIndex(
                 name: "IX_Cinemas_EnderecoId",
                 table: "Cinemas",
                 column: "EnderecoId",
-                unique: true);*/
+                unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_Sessoes_FilmeId",
+                name: "IX_Sessoes_CinemaId",
                 table: "Sessoes",
-                column: "FilmeId");
+                column: "CinemaId");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "Sessoes");
+
+            migrationBuilder.DropTable(
                 name: "Cinemas");
 
             migrationBuilder.DropTable(
-                name: "Sessoes");
+                name: "Filmes");
 
             migrationBuilder.DropTable(
                 name: "Enderecos");
