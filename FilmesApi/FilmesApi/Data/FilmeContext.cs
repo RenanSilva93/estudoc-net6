@@ -30,7 +30,8 @@ public class FilmeContext : DbContext
             .HasOne(endereco => endereco.Cinema)
             .WithOne(cinema => cinema.Endereco)
             .OnDelete(DeleteBehavior.Restrict);
-    }
+    
+}
 
     public DbSet<Filme> Filmes { get; set; }
     public DbSet<Cinema> Cinemas { get; set; }
